@@ -1,3 +1,5 @@
 User-agent: *
 Allow: /
 Sitemap: https://makeateam.co.kr/sitemap.xml
+
+#DaumWebMasterTool:124c0461c5275478e9061cc89e243446620da84deeb48b54a85fd681c066bc15:4djnnmDYbaXJEU0i2qqWPQ==
