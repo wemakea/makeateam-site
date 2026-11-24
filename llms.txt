@@ -9,6 +9,8 @@
 
 ## 주요 페이지
 - [메이커팀 홈](https://makeateam.co.kr/): 서비스 분야, 진행 순서, 자주 묻는 질문, 문의
+- [행사 프로그램](https://makeateam.co.kr/event/): 기업 체육대회, 레이저 서바이벌 팀빌딩, 천문 관측 체험, 레크리에이션, 오픈 행사
+- [행사 인력](https://makeateam.co.kr/staff/): 행사 경호·안전, VIP 의전, 진행요원, 사진·영상 기록, 설치·철수
 - [행사 준비 가이드](https://makeateam.co.kr/guide/): 행사 준비 방법 모음
 
 ## 행사 준비 가이드
