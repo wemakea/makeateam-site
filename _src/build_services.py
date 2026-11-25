@@ -36,7 +36,7 @@ def page(key, d):
         f'<meta property="og:url" content="{url}">',
         f'<meta property="og:image" content="{BASE}/{d["items"][0]["img"]}">',
         '<link rel="icon" href="../favicon.svg" type="image/svg+xml">', '<link rel="stylesheet" href="../assets/svc.css">',
-        '<script type="application/ld+json">', json.dumps(ld, ensure_ascii=False, indent=1), '</script>', '</head>', '<body>',
+        '<script type="application/ld+json">', json.dumps(ld, ensure_ascii=False, indent=1), '</script>', '<script src="/assets/analytics.js" defer></script>', '</head>', '<body>',
         '<header><div class="wrap bar"><a href="../"><img src="../assets/logo/h2_white.svg" alt="MAKE A TEAM 메이커팀" style="height:28px;width:auto;display:block"></a>'
         f'<nav aria-label="분야">{nav}<a href="../guide/">가이드</a><a href="../#contact">문의하기</a></nav></div></header>',
         '<section class="hero"><div class="wrap">',
@@ -77,7 +77,7 @@ def head(title, desc, url, img, ld, depth='../'):
             f'<meta property="og:title" content="{e(title)}">', f'<meta property="og:description" content="{e(desc)}">',
             f'<meta property="og:url" content="{url}">', f'<meta property="og:image" content="{BASE}/{img}">',
             f'<link rel="icon" href="{depth}favicon.svg" type="image/svg+xml">', f'<link rel="stylesheet" href="{depth}assets/svc.css">',
-            '<script type="application/ld+json">', json.dumps(ld, ensure_ascii=False, indent=1), '</script>', '</head>', '<body>']
+            '<script type="application/ld+json">', json.dumps(ld, ensure_ascii=False, indent=1), '</script>', '<script src="/assets/analytics.js" defer></script>', '</head>', '<body>']
 
 
 def header(key):

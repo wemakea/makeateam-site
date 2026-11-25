@@ -252,6 +252,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #FEE500;outline-offset:2p
  ]
 }
 </script>
+<script src="/assets/analytics.js" defer></script>
 </head>
 <body>
 
@@ -440,7 +441,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #FEE500;outline-offset:2p
     fetch(ENDPOINT, { method: 'POST', body: new URLSearchParams(new FormData(form)) })
       .then(function (r) { return r.json(); })
       .then(function (res) {
-        if (res && res.ok) { form.reset(); say('문의가 접수됐습니다. 확인하고 바로 연락드리겠습니다.'); }
+        if (res && res.ok) { if (window.matTrackLead) window.matTrackLead(); form.reset(); say('문의가 접수됐습니다. 확인하고 바로 연락드리겠습니다.'); }
         else { say((res && res.error) || '전송하지 못했습니다. 다시 시도해 주세요.', true); }
       })
       .catch(function () { say('전송하지 못했습니다. mat@wma.co.kr로 메일을 보내 주세요.', true); })
