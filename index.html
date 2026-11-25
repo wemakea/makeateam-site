@@ -25,6 +25,9 @@ a{color:#000000}a:hover{color:#525252}
 a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #ffffff;outline-offset:2px;box-shadow:0 0 0 4px #000}
 @media (max-width: 1000px){.mt-nav{gap:18px !important;font-size:14px !important}}
 @media (max-width: 760px){.mt-nav{display:none !important}.mt-kakao{right:14px !important;bottom:14px !important}.mt-row{flex-direction:column !important}}
+@media (max-width: 1100px){.mt-works{grid-template-columns:repeat(3,1fr) !important}}
+@media (max-width: 860px){.mt-artists{flex-direction:column !important;align-items:stretch !important}.mt-artists>div:first-child{flex:none !important}}
+@media (max-width: 560px){.mt-works{grid-template-columns:repeat(2,1fr) !important}.mt-artist-grid{grid-template-columns:repeat(2,1fr) !important}}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
 a:focus-visible,button:focus-visible{outline:2px solid #FEE500;outline-offset:2px}
 </style>
@@ -107,7 +110,6 @@ a:focus-visible,button:focus-visible{outline:2px solid #FEE500;outline-offset:2p
     "기업 체육대회",
     "행사 물품 렌탈",
     "레이저 서바이벌 팀빌딩",
-    "행사 경호·안전",
     "VIP 의전",
     "행사 사진·영상 촬영",
     "천문 관측 체험"
@@ -147,7 +149,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #FEE500;outline-offset:2p
       "itemOffered": {
        "@type": "Service",
        "name": "행사 인력",
-       "description": "진행요원, 안전·경호, 의전 도우미, 설치·철수 인력, 현장 슈퍼바이저",
+       "description": "진행요원, 의전 도우미, 설치·철수 인력, 현장 슈퍼바이저, 사진·영상 촬영",
        "url": "https://makeateam.co.kr/staff/"
       }
      },
@@ -222,7 +224,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #FEE500;outline-offset:2p
      "name": "행사 인력은 어떤 인력을 보내주나요?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "진행요원, 안전·경호 인력, 의전 도우미, 설치·철수 인력, 현장 슈퍼바이저를 행사 규모와 동선에 맞춰 구성합니다."
+      "text": "진행요원, 의전 도우미, 설치·철수 인력, 현장 슈퍼바이저, 사진·영상 촬영 인력을 행사 규모와 동선에 맞춰 구성합니다."
      }
     },
     {
@@ -303,13 +305,15 @@ a:focus-visible,button:focus-visible{outline:2px solid #FEE500;outline-offset:2p
 <h2 style="margin: 0; font-size: clamp(30px, 3.6vw, 44px); font-weight: 700; line-height: 1.25; letter-spacing: -0.02em">행사에 필요한 팀, 한 곳에서</h2>
 <p style="margin: 0; font-size: 17px; line-height: 1.8; color: #525252">무대부터 사람, 공연, 물품까지 한 팀으로 꾸려 운영합니다. 분야마다 업체를 따로 찾고 맞출 필요가 없습니다.</p>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px">
+<div class="mt-works" style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px">
 <a href="#contact" style="display: flex; flex-direction: column; gap: 14px; text-decoration: none; color: #000000"><img loading="lazy" src="assets/img/cat-stage.jpg" alt="음향 랙과 믹서를 세팅하는 엔지니어의 손" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 45% 50%"><div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px"><div style="font-size: 20px; font-weight: 700">무대 시스템</div><div style="font-size: 12px; font-weight: 700; color: #9a9a9a">STAGE</div></div><div style="font-size: 14px; line-height: 1.6; color: #525252">음향, 조명, LED, 무대, 특수효과</div><div style="font-size: 12px; line-height: 1.7; color: #9a9a9a">#SOUND #SYSTEM #LED #LIGHT #SP.EFFECT</div></a>
 <a href="performance/" style="display: flex; flex-direction: column; gap: 14px; text-decoration: none; color: #000000"><img loading="lazy" src="assets/img/cat-perf.jpg" alt="해 질 녘 야외 무대와 스피커, 객석" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 60% 50%"><div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px"><div style="font-size: 20px; font-weight: 700">공연</div><div style="font-size: 12px; font-weight: 700; color: #9a9a9a">PERFORMANCE</div></div><div style="font-size: 14px; line-height: 1.6; color: #525252">악기 연주, 노래, 댄스, 퍼포먼스</div><div style="font-size: 12px; line-height: 1.7; color: #9a9a9a">#MUSIC #INSTRUMENT #DANCE</div></a>
-<a href="staff/" style="display: flex; flex-direction: column; gap: 14px; text-decoration: none; color: #000000"><img loading="lazy" src="assets/img/cat-staff.jpg" alt="행사장 뒤편에 설치한 촬영 카메라" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 40% 50%"><div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px"><div style="font-size: 20px; font-weight: 700">인력 섭외</div><div style="font-size: 12px; font-weight: 700; color: #9a9a9a">STAFF</div></div><div style="font-size: 14px; line-height: 1.6; color: #525252">경호·안전, 의전, 진행요원, 사진과 영상</div><div style="font-size: 12px; line-height: 1.7; color: #9a9a9a">#SECURITY #PROTOCOL #ASSISTANT #PHOTO</div></a>
+<a href="artist/" style="display: flex; flex-direction: column; gap: 14px; text-decoration: none; color: #000000"><img loading="lazy" src="assets/img/artist-yoon-minhye.jpg" alt="무대에서 통기타를 메고 노래하는 싱어송라이터" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 48% 50%"><div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px"><div style="font-size: 20px; font-weight: 700">아티스트</div><div style="font-size: 12px; font-weight: 700; color: #9a9a9a">ARTIST</div></div><div style="font-size: 14px; line-height: 1.6; color: #525252">가수, 싱어송라이터, 보컬, 래퍼</div><div style="font-size: 12px; line-height: 1.7; color: #9a9a9a">#SINGER #VOCAL #RAPPER</div></a>
+<a href="staff/" style="display: flex; flex-direction: column; gap: 14px; text-decoration: none; color: #000000"><img loading="lazy" src="assets/img/cat-staff.jpg" alt="행사장 뒤편에 설치한 촬영 카메라" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 40% 50%"><div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px"><div style="font-size: 20px; font-weight: 700">인력 섭외</div><div style="font-size: 12px; font-weight: 700; color: #9a9a9a">STAFF</div></div><div style="font-size: 14px; line-height: 1.6; color: #525252">의전, 진행요원, 설치·철수, 사진과 영상</div><div style="font-size: 12px; line-height: 1.7; color: #9a9a9a">#PROTOCOL #ASSISTANT #PHOTO #VIDEO</div></a>
 <a href="event/" style="display: flex; flex-direction: column; gap: 14px; text-decoration: none; color: #000000"><img loading="lazy" src="assets/img/cat-event.jpg" alt="운동장에서 진행 중인 체육대회 게임" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 50%"><div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px"><div style="font-size: 20px; font-weight: 700">행사</div><div style="font-size: 12px; font-weight: 700; color: #9a9a9a">EVENT</div></div><div style="font-size: 14px; line-height: 1.6; color: #525252">운동회, 팀빌딩, 체험 부스, 오픈 행사</div><div style="font-size: 12px; line-height: 1.7; color: #9a9a9a">#SPORTS DAY #TEAM BUILDING #OPEN EVENT</div></a>
 <a href="#contact" style="display: flex; flex-direction: column; gap: 14px; text-decoration: none; color: #000000"><img loading="lazy" src="assets/img/cat-rental.jpg" alt="야외 행사장에 미리 깔아 둔 의자와 텐트" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 50%"><div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px"><div style="font-size: 20px; font-weight: 700">물품 렌탈</div><div style="font-size: 12px; font-weight: 700; color: #9a9a9a">RENTAL</div></div><div style="font-size: 14px; line-height: 1.6; color: #525252">텐트, 테이블과 의자, 행사 물품</div><div style="font-size: 12px; line-height: 1.7; color: #9a9a9a">#TABLE #CHAIR #CANOPY TENT #MONGOLIA TENT</div></a>
 </div>
+<div class="mt-artists" style="background: #f6f6f6; padding: clamp(24px, 3vw, 36px); display: flex; gap: clamp(24px, 4vw, 48px); align-items: center"><div style="flex: 0 0 240px; display: flex; flex-direction: column; gap: 12px"><div style="font-size: 22px; font-weight: 700; letter-spacing: -0.02em">협력 아티스트</div><p style="margin: 0; font-size: 15px; line-height: 1.7; color: #525252">프로필과 무대 이력을 보고 바로 섭외 문의할 수 있습니다. 무대와 음향까지 함께 준비합니다.</p><a href="artist/" style="font-size: 15px; font-weight: 700">아티스트 전체 보기</a></div><div class="mt-artist-grid" style="flex: 1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px"><a href="artist/hwang-garam.html" style="display: flex; flex-direction: column; gap: 10px; text-decoration: none; color: #000000"><img loading="lazy" src="assets/img/artist-hwang-garam.jpg" alt="황가람 프로필 사진" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: 50% 30%"><div><div style="font-size: 18px; font-weight: 700">황가람</div><div style="font-size: 13px; line-height: 1.6; color: #525252">발라드 가수</div></div></a><a href="artist/yoon-minhye.html" style="display: flex; flex-direction: column; gap: 10px; text-decoration: none; color: #000000"><img loading="lazy" src="assets/img/artist-yoon-minhye-2.jpg" alt="윤민혜 프로필 사진" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: 50% 30%"><div><div style="font-size: 18px; font-weight: 700">윤민혜</div><div style="font-size: 13px; line-height: 1.6; color: #525252">싱어송라이터</div></div></a><a href="artist/blujin.html" style="display: flex; flex-direction: column; gap: 10px; text-decoration: none; color: #000000"><img loading="lazy" src="assets/img/artist-blujin-2.jpg" alt="BluJin 프로필 사진" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: 50% 30%"><div><div style="font-size: 18px; font-weight: 700">BluJin</div><div style="font-size: 13px; line-height: 1.6; color: #525252">R&amp;B·팝 보컬</div></div></a><a href="artist/lil-jaewoo.html" style="display: flex; flex-direction: column; gap: 10px; text-decoration: none; color: #000000"><img loading="lazy" src="assets/img/artist-lil-jaewoo.jpg" alt="릴재우 프로필 사진" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: 44% 30%"><div><div style="font-size: 18px; font-weight: 700">릴재우</div><div style="font-size: 13px; line-height: 1.6; color: #525252">올드스쿨 래퍼</div></div></a></div></div>
 </div>
 </section>
 
@@ -356,7 +360,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #FEE500;outline-offset:2p
 <img loading="lazy" src="assets/img/g-control.jpg" alt="공연장 뒤편 영상 송출 데스크" style="width: 100%; aspect-ratio: 3 / 2; object-fit: cover">
 <img loading="lazy" src="assets/img/g-rack.jpg" alt="체육관 행사 음향 랙과 콘솔 세팅" style="width: 100%; aspect-ratio: 3 / 2; object-fit: cover">
 <img loading="lazy" src="assets/img/g-chairs.jpg" alt="의자 커버와 무빙 라이트를 세팅한 식장" style="width: 100%; aspect-ratio: 3 / 2; object-fit: cover">
-<img loading="lazy" src="assets/img/g-security.jpg" alt="축제 차량 통제 구역을 지키는 메이커팀 경호 인력" style="width: 100%; aspect-ratio: 3 / 2; object-fit: cover">
+<img loading="lazy" src="assets/img/g-consoles.jpg" alt="전시장 행사 음향·영상 콘솔 세팅" style="width: 100%; aspect-ratio: 3 / 2; object-fit: cover">
 <img loading="lazy" src="assets/img/g-tents.jpg" alt="개장 전 광장에 세운 텐트와 배너" style="width: 100%; aspect-ratio: 3 / 2; object-fit: cover">
 <img loading="lazy" src="assets/img/g-dj.jpg" alt="DJ 컨트롤러를 다루는 손" style="width: 100%; aspect-ratio: 3 / 2; object-fit: cover">
 <img loading="lazy" src="assets/img/g-laser.jpg" alt="야외 잔디밭에서 진행한 레이저 서바이벌 팀빌딩" style="width: 100%; aspect-ratio: 3 / 2; object-fit: cover">
@@ -376,7 +380,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #FEE500;outline-offset:2p
 <details style="border-bottom: 1px solid #e6e6e6"><summary style="cursor: pointer; padding: 20px 0; font-size: 18px; font-weight: 700; line-height: 1.5">어느 지역 행사까지 맡을 수 있나요?</summary><p style="margin: 0 0 22px; font-size: 16px; line-height: 1.8; color: #3b3b3b">부산 본사와 서울 지사가 있어 부산·울산·경남 등 영남권과 서울·경기 등 수도권 행사를 모두 맡습니다. 그 밖의 지역도 일정과 조건을 확인해 진행합니다.</p></details>
 <details style="border-bottom: 1px solid #e6e6e6"><summary style="cursor: pointer; padding: 20px 0; font-size: 18px; font-weight: 700; line-height: 1.5">기업 행사에는 어떤 공연을 섭외할 수 있나요?</summary><p style="margin: 0 0 22px; font-size: 16px; line-height: 1.8; color: #3b3b3b">재즈 밴드, 국악·전통 타악, 뮤지컬 갈라, 댄스·브레이킹 크루, 마술·미디어 퍼포먼스, 사일런트 디스코 DJ 등에서 행사 성격에 맞는 팀을 고릅니다. 개소식, 준공식, 창립기념식, 송년회, 축제 오프닝처럼 행사 목적과 관객에 맞춰 구성을 제안합니다.</p></details>
 <details style="border-bottom: 1px solid #e6e6e6"><summary style="cursor: pointer; padding: 20px 0; font-size: 18px; font-weight: 700; line-height: 1.5">공연이나 음향만 따로 맡겨도 되나요?</summary><p style="margin: 0 0 22px; font-size: 16px; line-height: 1.8; color: #3b3b3b">됩니다. 필요한 분야만 골라 맡기실 수 있습니다. 여러 분야를 함께 맡기시면 전담 매니저 한 명이 일정과 동선을 맞춰 현장 운영이 수월해집니다.</p></details>
-<details style="border-bottom: 1px solid #e6e6e6"><summary style="cursor: pointer; padding: 20px 0; font-size: 18px; font-weight: 700; line-height: 1.5">행사 인력은 어떤 인력을 보내주나요?</summary><p style="margin: 0 0 22px; font-size: 16px; line-height: 1.8; color: #3b3b3b">진행요원, 안전·경호 인력, 의전 도우미, 설치·철수 인력, 현장 슈퍼바이저를 행사 규모와 동선에 맞춰 구성합니다.</p></details>
+<details style="border-bottom: 1px solid #e6e6e6"><summary style="cursor: pointer; padding: 20px 0; font-size: 18px; font-weight: 700; line-height: 1.5">행사 인력은 어떤 인력을 보내주나요?</summary><p style="margin: 0 0 22px; font-size: 16px; line-height: 1.8; color: #3b3b3b">진행요원, 의전 도우미, 설치·철수 인력, 현장 슈퍼바이저, 사진·영상 촬영 인력을 행사 규모와 동선에 맞춰 구성합니다.</p></details>
 <details style="border-bottom: 1px solid #e6e6e6"><summary style="cursor: pointer; padding: 20px 0; font-size: 18px; font-weight: 700; line-height: 1.5">체육대회나 워크숍 프로그램도 진행하나요?</summary><p style="margin: 0 0 22px; font-size: 16px; line-height: 1.8; color: #3b3b3b">기업 체육대회, 레이저 서바이벌 같은 팀빌딩, 레크리에이션과 포토부스·VR·AR 게임·천문 관측 같은 체험 부스를 행사 일정에 맞춰 구성하고 운영합니다.</p></details>
 <details style="border-bottom: 1px solid #e6e6e6"><summary style="cursor: pointer; padding: 20px 0; font-size: 18px; font-weight: 700; line-height: 1.5">어떤 물품을 빌릴 수 있나요?</summary><p style="margin: 0 0 22px; font-size: 16px; line-height: 1.8; color: #3b3b3b">캐노피·몽골 텐트, 테이블과 의자, 음향·조명·LED 장비, 악기, 행사용품을 행사 규모에 맞춰 대여하고 설치와 철수까지 맡습니다.</p></details>
 <details style="border-bottom: 1px solid #e6e6e6"><summary style="cursor: pointer; padding: 20px 0; font-size: 18px; font-weight: 700; line-height: 1.5">견적은 어떻게 받나요?</summary><p style="margin: 0 0 22px; font-size: 16px; line-height: 1.8; color: #3b3b3b">이 페이지의 문의 양식, 카카오톡 채널 &#x27;메이커팀&#x27;, 이메일 mat@wma.co.kr 중 편한 곳으로 행사 날짜, 장소, 참석자 규모, 필요한 팀을 알려 주시면 확인 후 견적과 팀 구성을 보내드립니다. 전화 상담을 원하시면 연락처를 남겨 주세요. 담당자가 전화드립니다.</p></details>
