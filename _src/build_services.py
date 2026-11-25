@@ -53,7 +53,7 @@ def page(key, d):
                    '<div>' + title + (f'<p class="sub">{e(it["sub"])}</p>' if it.get('sub') else '') + f'<p class="one">{e(it["one"])}</p><dl>'
                    f'<dt>{e(lb[0])}</dt><dd>{e(", ".join(it["fit"]))}</dd>'
                    f'<dt>{e(lb[1])}</dt><dd><ul>' + ''.join(f'<li>{e(h)}</li>' for h in it['how']) + '</ul></dd>'
-                   + (f'<dt>주요 무대</dt><dd><ul>' + ''.join(f'<li>{e(c)}</li>' for c in it['career'][:3]) + '</ul></dd>' if it.get('career') else '') + '</dl>'
+                   + (f'<dt>{e(it.get("career_label", "주요 무대"))}</dt><dd><ul>' + ''.join(f'<li>{e(c)}</li>' for c in it['career'][:3]) + '</ul></dd>' if it.get('career') else '') + '</dl>'
                    '<div class="links">' + (f'<a href="{it["slug"]}.html">자세히 보기</a>' if it.get('slug') else '') + f'<a href="../#contact">{e(it["name"])} {"섭외 " if d.get("kind") == "artist" else ""}문의</a></div></div></article>')
     if d['more']:
         out.append('<section class="more"><h2>이런 것도 맡습니다</h2><p>필요한 것만 골라 맡기셔도 됩니다.</p><div class="grid">'
