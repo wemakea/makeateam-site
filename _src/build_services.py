@@ -7,7 +7,7 @@ import json, html, os
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE = 'https://makeateam.co.kr'
 data = json.load(open(os.path.join(ROOT, '_src', 'services.json'), encoding='utf-8'))
-NAV = [('event', '행사 프로그램'), ('staff', '행사 인력'), ('performance', '공연')]
+NAV = [('event', '행사 프로그램'), ('staff', '행사 인력'), ('performance', '공연'), ('artist', '아티스트')]
 e = lambda s: html.escape(s, quote=True)
 
 
@@ -19,10 +19,12 @@ def page(key, d):
             {"@type": "ListItem", "position": 1, "name": "메이커팀", "item": BASE + "/"},
             {"@type": "ListItem", "position": 2, "name": d['title'], "item": url}]},
         {"@type": "ItemList", "name": d['title'], "itemListElement": [
-            {"@type": "ListItem", "position": i + 1, "item": {
+            {"@type": "ListItem", "position": i + 1, "item": (
+                {"@type": "Person", "name": it['name'], "jobTitle": it.get('sub', ''), "description": it['one'], "image": f"{BASE}/{it['img']}",
+                 "url": f"{url}{it['slug']}.html"} if d.get('kind') == 'artist' else {
                 "@type": "Service", "name": it['name'], "description": it.get('one') or it.get('text'),
                 "provider": {"@type": "Organization", "name": "메이커팀 MAKE A TEAM", "url": BASE + "/"},
-                "areaServed": "KR"}}
+                "areaServed": "KR"})}
             for i, it in enumerate(d['items'] + d['more'])]}]}
     nav = ''.join(f'<a href="../{p}/"' + (' aria-current="page"' if p == key else '') + f'>{e(t)}</a>' for p, t in NAV)
     out = [
@@ -43,17 +45,19 @@ def page(key, d):
         f'<p class="crumb"><a href="../">메이커팀</a> › {e(d["title"])}</p>',
         f'<div class="en">{e(d["en"])}</div><h1>{e(d["title"])}</h1><p>{e(d["lead"])}</p>',
         '</div></section>', '<main><div class="wrap">']
+    lb = d.get('labels', ['잘 맞는 행사', '운영 방식'])
     for it in d['items']:
         title = (f'<h2><a href="{it["slug"]}.html">{e(it["name"])}</a></h2>' if it.get('slug') else f'<h2>{e(it["name"])}</h2>')
         out.append('<article class="item">'
                    f'<img loading="lazy" src="../{it["img"]}" alt="{e(it["alt"])}">'
-                   '<div>' + title + f'<p class="one">{e(it["one"])}</p><dl>'
-                   f'<dt>잘 맞는 행사</dt><dd>{e(", ".join(it["fit"]))}</dd>'
-                   '<dt>운영 방식</dt><dd><ul>' + ''.join(f'<li>{e(h)}</li>' for h in it['how']) + '</ul></dd></dl>'
-                   '<div class="links">' + (f'<a href="{it["slug"]}.html">자세히 보기</a>' if it.get('slug') else '') + f'<a href="../#contact">{e(it["name"])} 문의</a></div></div></article>')
+                   '<div>' + title + (f'<p class="sub">{e(it["sub"])}</p>' if it.get('sub') else '') + f'<p class="one">{e(it["one"])}</p><dl>'
+                   f'<dt>{e(lb[0])}</dt><dd>{e(", ".join(it["fit"]))}</dd>'
+                   f'<dt>{e(lb[1])}</dt><dd><ul>' + ''.join(f'<li>{e(h)}</li>' for h in it['how']) + '</ul></dd>'
+                   + (f'<dt>주요 무대</dt><dd><ul>' + ''.join(f'<li>{e(c)}</li>' for c in it['career'][:3]) + '</ul></dd>' if it.get('career') else '') + '</dl>'
+                   '<div class="links">' + (f'<a href="{it["slug"]}.html">자세히 보기</a>' if it.get('slug') else '') + f'<a href="../#contact">{e(it["name"])} {"섭외 " if d.get("kind") == "artist" else ""}문의</a></div></div></article>')
     if d['more']:
         out.append('<section class="more"><h2>이런 것도 맡습니다</h2><p>필요한 것만 골라 맡기셔도 됩니다.</p><div class="grid">'
-                   + ''.join(f'<div><b>{e(m["name"])}</b><span>{e(m["text"])}</span></div>' for m in d['more'])
+                   + ''.join(f'<div><b>' + (f'<a href="{m["href"]}">{e(m["name"])}</a>' if m.get('href') else e(m["name"])) + f'</b><span>{e(m["text"])}</span></div>' for m in d['more'])
                    + '</div>'
                    + (f'<p style="margin-top:24px">준비 방법은 <a href="{d["guide"]["href"]}" style="font-weight:700">{e(d["guide"]["text"])}</a>에서 볼 수 있습니다.</p>' if d.get('guide') else '')
                    + '</section>')
@@ -109,13 +113,21 @@ def detail(key, d, it, by_name):
             {"@type": "ListItem", "position": 2, "name": d['title'], "item": cat_url},
             {"@type": "ListItem", "position": 3, "name": it['name'], "item": url}]},
         {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in dt['faq']]}]}
-    out = head(f"{it['name']} | {d['title']} | 메이커팀", desc, url, it['img'], ld)
+    if d.get('kind') == 'artist':
+        ld['@graph'][0]['name'] = f"{it['name']} 공연 섭외"
+        ld['@graph'].append({"@type": "Person", "name": it['name'], "jobTitle": it.get('sub', ''), "image": f"{BASE}/{it['img']}", "description": dt['intro']})
+        ttl = f"{it['name']} 섭외 · {it.get('sub', '')} | 메이커팀"
+    else:
+        ttl = f"{it['name']} | {d['title']} | 메이커팀"
+    out = head(ttl, desc, url, it['img'], ld)
     out += [header(key),
             '<section class="hero"><div class="wrap">',
             f'<p class="crumb"><a href="../">메이커팀</a> › <a href="./">{e(d["title"])}</a> › {e(it["name"])}</p>',
             f'<div class="en">{e(d["en"])}</div><h1>{e(it["name"])}</h1><p>{e(it["one"])}</p>',
             '</div></section>',
             '<main><div class="wrap dt">', f'<img class="dt-hero" src="../{it["img"]}" alt="{e(it["alt"])}">', f'<p class="intro">{e(dt["intro"])}</p>']
+    if dt.get('gallery'):
+        out.append('<div class="gal">' + ''.join(f'<img loading="lazy" src="../{g}" alt="{e(it["name"])} 프로필 사진">' for g in dt['gallery']) + '</div>')
     for sec in dt['sections']:
         out.append(f'<h2>{e(sec["h"])}</h2>')
         if 'table' in sec:

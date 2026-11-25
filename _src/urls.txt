@@ -8,3 +8,7 @@ https://makeateam.co.kr/staff/photo-video.html
 https://makeateam.co.kr/performance/
 https://makeateam.co.kr/performance/calligraphy-performance.html
 https://makeateam.co.kr/performance/calligraphy-class.html
+https://makeateam.co.kr/artist/
+https://makeateam.co.kr/artist/yoon-minhye.html
+https://makeateam.co.kr/artist/blujin.html
+https://makeateam.co.kr/artist/lil-jaewoo.html
