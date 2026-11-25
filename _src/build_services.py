@@ -7,7 +7,7 @@ import json, html, os
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE = 'https://makeateam.co.kr'
 data = json.load(open(os.path.join(ROOT, '_src', 'services.json'), encoding='utf-8'))
-NAV = [('event', '행사 프로그램'), ('staff', '행사 인력')]
+NAV = [('event', '행사 프로그램'), ('staff', '행사 인력'), ('performance', '공연')]
 e = lambda s: html.escape(s, quote=True)
 
 
