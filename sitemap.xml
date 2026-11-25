@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://makeateam.co.kr/</loc><lastmod>2026-11-25</lastmod></url>
   <url><loc>https://makeateam.co.kr/event/</loc><lastmod>2026-11-25</lastmod></url>
-  <url><loc>https://makeateam.co.kr/staff/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://makeateam.co.kr/staff/</loc><lastmod>2026-11-25</lastmod></url>
   <url><loc>https://makeateam.co.kr/guide/</loc><lastmod>2026-11-24</lastmod></url>
   <url><loc>https://makeateam.co.kr/guide/performance.html</loc><lastmod>2026-11-24</lastmod></url>
   <url><loc>https://makeateam.co.kr/guide/stage-sound.html</loc><lastmod>2026-11-24</lastmod></url>
@@ -22,4 +22,6 @@
   <url><loc>https://makeateam.co.kr/artist/blujin.html</loc><lastmod>2026-11-25</lastmod></url>
   <url><loc>https://makeateam.co.kr/artist/lil-jaewoo.html</loc><lastmod>2026-11-25</lastmod></url>
   <url><loc>https://makeateam.co.kr/artist/hwang-garam.html</loc><lastmod>2026-11-25</lastmod></url>
+  <url><loc>https://makeateam.co.kr/stage/</loc><lastmod>2026-11-25</lastmod></url>
+  <url><loc>https://makeateam.co.kr/rental/</loc><lastmod>2026-11-25</lastmod></url>
 </urlset>
