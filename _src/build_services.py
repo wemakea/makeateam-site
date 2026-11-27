@@ -76,7 +76,7 @@ def page(key, d):
             '<p>규모와 필요한 구성을 확인한 뒤 견적과 운영 계획을 보내드립니다. 계약과 세금계산서는 주식회사 위메이커 명의로 처리합니다.</p>'
             '<a href="../#contact">문의하기</a><a class="kakao" href="https://pf.kakao.com/_xoTWvX/chat" target="_blank" rel="noopener">카카오톡 문의</a></div></section>',
             '<footer><div class="wrap">메이커팀은 주식회사 위메이커가 운영합니다. 부산 본사, 서울 지사. 이메일 mat@wma.co.kr. '
-            '<a href="../">홈</a> <a href="../guide/">행사 준비 가이드</a> <a href="../privacy.html">개인정보 처리방침</a></div></footer>',
+            '<a href="../">홈</a> <a href="../guide/">행사 준비 가이드</a> <a href="http://blog.makeateam.co.kr/">블로그</a> <a href="../privacy.html">개인정보 처리방침</a></div></footer>',
             '</body>', '</html>', '']
     os.makedirs(os.path.join(ROOT, d['path']), exist_ok=True)
     open(os.path.join(ROOT, d['path'], 'index.html'), 'w', encoding='utf-8').write('\n'.join(out))
@@ -104,7 +104,7 @@ TAIL = ['<section class="cta"><div class="wrap"><strong>행사 날짜와 장소�
         '<p>규모와 필요한 구성을 확인한 뒤 견적과 운영 계획을 보내드립니다. 계약과 세금계산서는 주식회사 위메이커 명의로 처리합니다.</p>'
         '<a href="../#contact">문의하기</a><a class="kakao" href="https://pf.kakao.com/_xoTWvX/chat" target="_blank" rel="noopener">카카오톡 문의</a></div></section>',
         '<footer><div class="wrap">메이커팀은 주식회사 위메이커가 운영합니다. 부산 본사, 서울 지사. 이메일 mat@wma.co.kr. '
-        '<a href="../">홈</a> <a href="../guide/">행사 준비 가이드</a> <a href="../privacy.html">개인정보 처리방침</a></div></footer>',
+        '<a href="../">홈</a> <a href="../guide/">행사 준비 가이드</a> <a href="http://blog.makeateam.co.kr/">블로그</a> <a href="../privacy.html">개인정보 처리방침</a></div></footer>',
         '</body>', '</html>', '']
 
 
