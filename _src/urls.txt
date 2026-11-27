@@ -2,8 +2,10 @@ https://makeateam.co.kr/stage/
 https://makeateam.co.kr/event/
 https://makeateam.co.kr/event/sports-day.html
 https://makeateam.co.kr/event/laser-survival.html
+https://makeateam.co.kr/event/ar-mission-tour.html
 https://makeateam.co.kr/event/photo-booth.html
 https://makeateam.co.kr/staff/
+https://makeateam.co.kr/staff/field-team.html
 https://makeateam.co.kr/staff/photo-video.html
 https://makeateam.co.kr/performance/
 https://makeateam.co.kr/performance/calligraphy-performance.html
@@ -13,4 +15,6 @@ https://makeateam.co.kr/artist/hwang-garam.html
 https://makeateam.co.kr/artist/yoon-minhye.html
 https://makeateam.co.kr/artist/blujin.html
 https://makeateam.co.kr/artist/lil-jaewoo.html
+https://makeateam.co.kr/artist/omyuo.html
+https://makeateam.co.kr/artist/zimin.html
 https://makeateam.co.kr/rental/
