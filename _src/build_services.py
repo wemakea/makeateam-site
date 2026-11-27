@@ -46,8 +46,18 @@ def page(key, d):
         f'<div class="en">{e(d["en"])}</div><h1>{e(d["title"])}</h1><p>{e(d["lead"])}</p>',
         '</div></section>', '<main><div class="wrap">']
     lb = d.get('labels', ['잘 맞는 행사', '운영 방식'])
-    for it in d['items']:
-        title = (f'<h2><a href="{it["slug"]}.html">{e(it["name"])}</a></h2>' if it.get('slug') else f'<h2>{e(it["name"])}</h2>')
+    groups = d.get('groups')  # [[키, 표시 이름], ...] 있으면 장르별로 묶어 보여 준다
+    seq = [(None, it) for it in d['items']]
+    if groups:
+        seq = [(g, it) for g, _ in groups for it in d['items'] if it.get('genre') == g]
+        gname = dict(map(tuple, groups))
+        out.append('<nav class="gnav" aria-label="장르">' + ''.join(f'<a href="#g-{g}">{e(n)}</a>' for g, n in groups if any(it.get('genre') == g for it in d['items'])) + '</nav>')
+    hx = 'h3' if groups else 'h2'
+    cur = None
+    for g, it in seq:
+        if groups and g != cur:
+            out.append(f'<h2 class="gh" id="g-{g}">{e(gname[g])}</h2>'); cur = g
+        title = (f'<{hx}><a href="{it["slug"]}.html">{e(it["name"])}</a></{hx}>' if it.get('slug') else f'<{hx}>{e(it["name"])}</{hx}>')
         out.append('<article class="item">'
                    f'<img loading="lazy" src="../{it["img"]}" alt="{e(it["alt"])}">'
                    '<div>' + title + (f'<p class="sub">{e(it["sub"])}</p>' if it.get('sub') else '') + f'<p class="one">{e(it["one"])}</p><dl>'

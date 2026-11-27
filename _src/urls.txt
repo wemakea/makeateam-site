@@ -10,6 +10,9 @@ https://makeateam.co.kr/staff/photo-video.html
 https://makeateam.co.kr/performance/
 https://makeateam.co.kr/performance/calligraphy-performance.html
 https://makeateam.co.kr/performance/calligraphy-class.html
+https://makeateam.co.kr/performance/popera.html
+https://makeateam.co.kr/performance/kpop-dance.html
+https://makeateam.co.kr/performance/magic.html
 https://makeateam.co.kr/artist/
 https://makeateam.co.kr/artist/hwang-garam.html
 https://makeateam.co.kr/artist/yoon-minhye.html
@@ -17,4 +20,11 @@ https://makeateam.co.kr/artist/blujin.html
 https://makeateam.co.kr/artist/lil-jaewoo.html
 https://makeateam.co.kr/artist/omyuo.html
 https://makeateam.co.kr/artist/zimin.html
+https://makeateam.co.kr/artist/jeongjeom.html
+https://makeateam.co.kr/artist/dumadi.html
+https://makeateam.co.kr/artist/samchi-igiri.html
+https://makeateam.co.kr/artist/otwo.html
+https://makeateam.co.kr/artist/han-byeongho.html
+https://makeateam.co.kr/artist/jueun.html
+https://makeateam.co.kr/artist/kissy.html
 https://makeateam.co.kr/rental/
