@@ -1,4 +1,5 @@
 https://makeateam.co.kr/stage/
+https://makeateam.co.kr/stage/projection-mapping.html
 https://makeateam.co.kr/event/
 https://makeateam.co.kr/event/sports-day.html
 https://makeateam.co.kr/event/laser-survival.html
@@ -13,6 +14,7 @@ https://makeateam.co.kr/performance/calligraphy-class.html
 https://makeateam.co.kr/performance/popera.html
 https://makeateam.co.kr/performance/kpop-dance.html
 https://makeateam.co.kr/performance/magic.html
+https://makeateam.co.kr/performance/media-magic.html
 https://makeateam.co.kr/artist/
 https://makeateam.co.kr/artist/hwang-garam.html
 https://makeateam.co.kr/artist/yoon-minhye.html
